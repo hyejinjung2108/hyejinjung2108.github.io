@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정혜진 | Hyejin Jung</title>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --navy: #102a43;
+      --line: #e5e7eb;
+      --soft: #f7f9fb;
+      --accent: #375a7f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--navy);
+    }
+
+    .hero {
+      min-height: 720px;
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 72px;
+      align-items: center;
+      padding: 86px 0 72px;
+    }
+
+    .portrait-card {
+      background: var(--soft);
+      border-radius: 28px;
+      padding: 22px;
+      border: 1px solid var(--line);
+    }
+
+    .portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 22px;
+      display: block;
+      background: white;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 76px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      color: var(--navy);
+      letter-spacing: -0.06em;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      color: #334155;
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+
+    .fields {
+      font-size: 19px;
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .intro {
+      max-width: 660px;
+      font-size: 17px;
+      color: #4b5563;
+      margin-bottom: 34px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid var(--navy);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .btn.primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--navy);
+    }
+
+    section {
+      padding: 86px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin: 0 0 16px;
+      color: var(--navy);
+      letter-spacing: -0.04em;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 34px;
+      font-size: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: white;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 19px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .item {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .item span {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    footer {
+      padding: 42px 0;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 860px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding-top: 52px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+
+      <a class="logo" href="#top">
+        Hyejin Jung
+      </a>
+
+      <nav class="nav-links">
+        <a href="#profile">Profile</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="top" class="container">
+
+    <section class="hero">
+
+      <div class="portrait-card">
+        <img class="portrait" src="profile.jpg" alt="정혜진 프로필 사진">
+      </div>
+
+      <div>
+
+        <div class="eyebrow">
+          Policy · Innovation · Urban Studies
+        </div>
+
+        <h1>정혜진</h1>
+
+        <p class="subtitle">
+          부산대학교 행정학과 교수 / 부산대언론사 주간
+        </p>
+
+        <p class="fields">
+          과학기술정책 · 지역혁신 · 도시정책
+        </p>
+
+        <p class="intro">
+          과학기술정책과 지역혁신을 중심으로 공공문제와 정책변화를 연구합니다.
+          최근에는 R&D 정책, AI 기반 정책분석, 지역혁신 전략,
+          데이터 기반 도시정책 연구를 수행하고 있습니다.
+        </p>
+
+        <div class="buttons">
+          <a class="btn primary" href="#research">Research</a>
+          <a class="btn secondary" href="#contact">Contact</a>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="profile">
+
+      <h2 class="section-title">Profile</h2>
+
+      <p class="section-lead">
+        Hyejin Jung is a professor in the Department of Public Administration at Pusan National University.
+        Her research focuses on science and technology policy, regional innovation, urban policy, and data-driven policy analysis.
+      </p>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Affiliation</h3>
+          <p>
+            부산대학교 행정학과<br>
+            Department of Public Administration, Pusan National University
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Role</h3>
+          <p>
+            교수 / 부산대언론사 주간<br>
+            Professor / Faculty Advisor, PNU Press
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Keywords</h3>
+          <p>
+            Science & Technology Policy, Regional Innovation,
+            Urban Policy, AI Policy, Text Mining
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="research">
+
+      <h2 class="section-title">Research</h2>
+
+      <p class="section-lead">
+        주요 연구 관심사는 R&D 정책, 지역혁신, 도시정책, 데이터 기반 정책분석입니다.
+      </p>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Science & Technology Policy</h3>
+          <p>
+            국가혁신체제, 기술혁신정책,
+            연구개발 거버넌스와 혁신생태계 분석
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Regional Innovation</h3>
+          <p>
+            지역혁신체계, 산학협력,
+            지역경제와 대학의 역할에 관한 연구
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Urban Policy & Data</h3>
+          <p>
+            도시정책, 텍스트마이닝 기반 정책의제 및 담론 분석
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="publications">
+
+      <h2 class="section-title">Selected Publications</h2>
+
+      <p class="section-lead">
+        주요 연구 논문과 학술성과입니다.
+      </p>
+
+      <div class="list">
+
+        <div class="item">
+          <strong>
+            [SSCI] Influence of government-funded postdoctoral fellowships on tenure-track appointments of scholars in the social sciences and humanities
+          </strong>
+          <span>
+            H. Jung, J.M. Yang, Y.S. Oh · Asia Pacific Education Review · 2022.06
+          </span>
+        </div>
+
+        <div class="item">
+          <strong>
+            [KCI] 연구개발 활동에서 인공지능 도구의 사용 책임에 관한 연구
+          </strong>
+          <span>
+            김해도, 양정모, 정혜진(교신) · 감사논집 · 2024.05
+          </span>
+        </div>
+
+        <div class="item">
+          <strong>
+            [KCI] 텍스트 마이닝을 활용한 참여형 국가R&D 과제 경향 분석
+          </strong>
+          <span>
+            김나은, 홍정석, 정혜진(교신) · 한국행정논집 · 2023.12
+          </span>
+        </div>
+
+        <div class="item">
+          <strong>
+            [KCI] 통합기술수용모델을 활용한 무인순찰장비에 대한 경찰의 수용 요인:
+            부산광역시를 중심으로
+          </strong>
+          <span>
+            김나은, 정혜진(교신) · 치안정책연구 · 2023.06
+          </span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="projects">
+
+      <h2 class="section-title">Projects & Activities</h2>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>(연구책임)</h3>
+          <p>
+            기초연구 기본계획 수립을 위한 AI 기반 의사결정지원체계 구축 및 실증 연구<br>
+            한국연구재단<br>
+            2021.03 – 2028.02
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>(연구책임)</h3>
+          <p>
+            통합기술수용(UTAUT) 모델을 활용한 지역경찰의 지능형 치안 기술수용 요인연구<br>
+            한국연구재단<br>
+            2022.05 – 2023.04
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>(참여연구)</h3>
+          <p>
+            도시재생 실효성 증진을 위한 범죄예방 리빙랩 개발<br>
+            과학기술정보통신부 · 경찰청<br>
+            치안현장 맞춤형 연구개발사업(폴리스랩 2.0)<br>
+            2021.07 – 2024.06
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="contact">
+
+      <h2 class="section-title">Contact</h2>
+
+      <p class="section-lead">
+        Department of Public Administration, Pusan National University<br>
+        Email: hjung@pusan.ac.kr<br>
+        Website: hyejinjung.github.io
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Hyejin Jung. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
